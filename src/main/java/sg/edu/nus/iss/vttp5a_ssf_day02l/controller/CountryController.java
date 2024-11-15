@@ -43,7 +43,6 @@ public class CountryController {
         List<Country> countries = countryService.getCountries();
 
         countries = countries.stream().filter(c -> c.getPopulation() >= Integer.parseInt(quantity)).collect(Collectors.toList());
-        
         model.addAttribute("countries", countries);
 
         return "countrylist";
