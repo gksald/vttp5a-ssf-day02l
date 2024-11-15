@@ -13,6 +13,9 @@
         <thead>
             <tr>
                 <th>Index</th>
+                <th>Even</th>
+                <th>First Record</th>
+                <th>Last Record</th>
                 <th>id</th>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -22,8 +25,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr data-th-each="student, state : ${students}">
-                <td data-th-text="${state.index}"></td>
+            <tr data-th-each="student, status : ${students}">
+                <td data-th-text="${status.index + 1}"></td>
+                <td data-th-text="${status.even}"></td>
+                <td data-th-utext="${status.first}"></td>
+                <td data-th-utext="${status.last}"></td>
                 <td data-th-text="${student.id}"></td>
                 <td data-th-text="${student.firstName}"></td>
                 <td data-th-text="${student.lastName}"></td>
